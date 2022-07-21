@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />                                                    <!-- encodage -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- largeur viewport navigateur mobile -->
+        <link rel="stylesheet" href="css/normalize.css" />                          <!-- cohérence entre les navigateurs -->
+        <link rel="stylesheet" href="css/styleohmyfood.css" />                      <!-- feuille de style -->
+        <title>Ohmyfood/Accueil</title>
+        <!-- Chargement police 'shrikhand'-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <!-- Chargement police 'roboto'-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <!-- Librairie Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Media query pour tablettes et desktop -->
+        <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="css/tablette.css" />
+        <link rel="stylesheet" media="screen and (min-width:1024px)" href="css/desktop.css" />
+    </head>
+
+    <body>
+        <div id="bloc_page">
+            <!-- ****************************************************************** En-tête *************************************************************************** -->
+            <header>
+                <!-- logo -->    
+                <div class="logo_ohmyfood">                    
+                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood"> 
+                </div>
+                <!-- Zone de recherche -->
+                <div class="zone-recherche">
+                    <!-- Icone recherche -->
+                    <i class="fa-solid fa-location-dot"></i>
+                    <!-- Formulaire de recherche -->
+                    <form method="post" action="traitement.php">                        
+                        <!-- Zone de saisie -->                        
+                        <input type="search" name="localisation" id="localisation" placeholder="Paris, Belleville" size="20" autofocus autocomplete="off" />                 
+                    </form>
+                </div>
+                <div>
+                    <h1>Réservez le menu qui vous convient</h1>
+                    <p>Découvrez des restaurants d'exception sélectionnés pas nos soins</p>
+                    <!-- bouton de recherche -->
+                    <input type="submit" value="Explorer nos restaurants" class="bouton-rech" />
+                </div>
+            </header>
+            <!-- ************************************************************** Corps ********************************************************************************** -->
+            <!-- :::::::::::::::::::::::::::::::::: Fonctionnement ::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->     
+            <section class="fonction"> 
+                 <h2>Fonctionnement</h2>               
+                 <ol>                                                
+                    <li class="ligne_fonct"><i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</li>
+                    <li class="ligne_fonct"><i class="fa-solid fa-list-ul"></i>Composez votre menu</li>
+                    <li class="ligne_fonct"><i class="fa-solid fa-store"></i>Dégustez au restaurant</li>
+                </ol>
+            </section>                
+            
+            <section id="restaurants">
+                <!-- ::::::::::::::::::::::::::::::::::: Restaurants :::::::::::::::::::::::::::::::::::::::::::: -->             
+                <h2>Restaurants</h2>
+                    <div class="cadre_restaurant">                                                                              
+                        <img src="images/restaurants/palette_gout.jpg" alt="La palette du goût" >
+                        <h3>La palette du goût</h3>
+                        <p>Ménilmontant</p>
+                        <a href="pagepalette.html"><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                    <div class="cadre_restaurant">                                                                              
+                        <img src="images/restaurants/note_enchantee.jpg" alt="La note enchantée" >
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                        <a href="pagenote.html"><i class="fa-solid fa-heart"></i></a>
+                    </div>  
+                    <div class="cadre_restaurant">                                                                              
+                        <img src="images/restaurants/a_la_francaise.jpg" alt="A la française" >
+                        <h3>À la française</h3>
+                        <p>Cité Rouge</p>
+                        <a href="pagefrancaise.html"><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                    <div class="cadre_restaurant">                                                                              
+                        <img src="images/restaurants/delice_sens.jpg" alt="Le délice des sens" >
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                        <a href="pagedelice.html"><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                </section>                       
+            <!-- ************************************************************** Pied de page *************************************************************************** -->
+            <footer id="pied">
+                    <h3>ohmyfood</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
+                        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+            </footer>
+        </div>
+    </body>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />                                                    <!-- encodage -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- largeur viewport navigateur mobile -->
+        <link rel="stylesheet" href="css/normalize.css" />                          <!-- cohérence entre les navigateurs -->
+        <link rel="stylesheet" href="css/styleohmyfood.css" />                      <!-- feuille de style -->
+        <title>Ohmyfood/Note enchantée</title>
+        <!-- Chargement police 'shrikhand'-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <!-- Chargement police 'roboto'-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <!-- Librairie Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Media query pour tablettes et desktop -->
+        <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="css/tablette.css" />
+        <link rel="stylesheet" media="screen and (min-width:1024px)" href="css/desktop.css" />
+    </head>
+
+    <body>
+        <div id="bloc_page">
+            <!-- ****************************************************************** En-tête *************************************************************************** -->
+            <header>                
+                <!-- Retour accueil -->
+                <div class="retour_acc">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <!-- logo -->    
+                <div class="logo_ohmyfood">                    
+                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood"> 
+                </div>                
+            </header>
+            <!-- ************************************************************** Corps ********************************************************************************** -->
+            <section> 
+                <div class="photo_resto">                    
+                    <img src="images/restaurants/note_enchantee.jpg" alt="La note enchantée" >
+                </div>                 
+            </section>                
+            <!-- ::::::::::::::::::::::::::::::::::: Menus :::::::::::::::::::::::::::::::::::::::::::: -->
+            <section class="carte">
+                <div class="carte__nom_resto">
+                    <h1>La note enchantée</h1>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <!-- ::::::::::::::::::::::::::::::::::: Entrées :::::::::::::::::::::::::::::::::::::::::::: -->
+                <div class="carte__entrees">
+                    <div class="carte__titre">                             
+                        <h2>ENTRÉES</h2>
+                        <p>____</p>
+                    </div>
+                    <div class="carte__entree">
+                        <div class="carte__ligne">
+                            <h3>Ravioles de foie gras</h3>
+                            <p>Accompagnés de leur crème à la truffe</p>
+                            <p>25€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Caviar osciètre</h3>
+                            <p>Sur blini à la farine de blé noir</p>
+                            <p>35€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Homard et espuma de potiron</h3>
+                            <p>Mariné aux zestes d'orange</p>
+                            <p>20€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Foie gras de canard cuit entier</h3>
+                            <p>Confiture de figue et pain toasté</p>
+                            <p>35€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                    </div>
+               </div> 
+               <!-- ::::::::::::::::::::::::::::::::::: Plats :::::::::::::::::::::::::::::::::::::::::::: -->
+               <div class="carte__plats">
+                    <div class="carte__titre">                             
+                        <h2>PLATS</h2>
+                        <p>____</p>
+                    </div>
+                    <div class="carte__plat">
+                        <div class="carte__ligne">
+                            <h3>Noix de coquilles Saint-Jacques</h3>
+                            <p>Sur lit de purée de céleri-rave</p>
+                            <p>40€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Langoustine poêlée</h3>
+                            <p>Purée de patate douce</p>
+                            <p>35€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Mijoté de queue de boeuf</h3>
+                            <p>Et riz sauvage aux zestes de citron</p>
+                            <p>44€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ::::::::::::::::::::::::::::::::::: Desserts :::::::::::::::::::::::::::::::::::::::::::: -->
+               <div class="carte__desserts">
+                    <div class="carte__titre">                             
+                        <h2>DESSERTS</h2>
+                        <p>____</p>
+                    </div>
+                    <div class="carte__dessert">
+                        <div class="carte__ligne">
+                            <h3>Macaron noisette et chocolat</h3>
+                            <p>Glace au caramel brun et sel de Guérande</p>
+                            <p>18€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Baba au rhum revisité</h3>
+                            <p>Avec son coulis de citron</p>
+                            <p>22€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                        <div class="carte__ligne">
+                            <h3>Tarte au citron meringuée</h3>
+                            <p>Déstructurée</p>
+                            <p>23€</p>
+                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        </div>
+                    </div>
+                </div>                
+                <!-- bouton de commande -->    
+                 <div>    
+                    <input type="submit" value="Commander" class="bouton_cde" />
+                </div>    
+            </section>                       
+            <!-- ************************************************************** Pied de page *************************************************************************** -->
+            <footer id="pied">
+                    <h3>ohmyfood</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
+                        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+            </footer>
+        </div>
+    </body>
