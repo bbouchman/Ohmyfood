@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/* --------------------- Paramètres généraux de la page ------------------------- */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#bloc_page {
+  width: 100%; /* largeur de la page */
+  margin: auto;
+}
+
+.titre-section {
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+/* ****************************************** Page accueil *********************************************** */
+/* -------------------------- en-tête ------------------------------------------ */
+.entete {
+  display: flex;
+  justify-content: center;
+}
+.entete > img {
+  margin: 10px 0 10px 0;
+  width: 50%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* ------------------------- formulaire de recherche --------------------------- */
+.form-rech {
+  background-color: #f2f0f0;
+  padding-bottom: 40px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  background-color: #e3e3e3;
+  padding: 10px 0 10px 0;
+}
+.input__ico {
+  align-items: center;
+  padding-top: 4px;
+}
+.input__rech {
+  margin-left: 10px;
+}
+.input__rech--style {
+  background-color: #e3e3e3;
+  border: none;
+  font-weight: bold;
+}
+
+.lib {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0 0 0;
+}
+.lib > h1 {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 60px 0 60px;
+  margin: 15px 0 0 0;
+}
+.lib > p {
+  font-size: 16px;
+  padding: 0 30px 0 30px;
+  margin: 15px 0 0 0;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 0 0;
+}
+.bouton > input {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px 10px 15px;
+  box-shadow: 5px 5px 5px #9356DC;
+}
+
+/* ------------------------- fonctionnement --------------------------- */
+.ligne {
+  display: flex;
+  align-items: baseline;
+  font-size: 15px;
+  margin: 0 15px 15px 20px;
+  padding: 5px 0 5px 0;
+  background-color: #f2f0f0;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #e3e3e3;
+}
+.ligne__num {
+  position: relative;
+  left: -10px;
+  padding: 5px 8px 3px 8px;
+  background-color: #9356DC;
+  color: white;
+  border: none;
+  border-radius: 25px;
+}
+.ligne__ico {
+  margin-left: 20px;
+}
+.ligne__lib {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* ------------------------- restaurants --------------------------- */
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f0f0;
+  padding-bottom: 20px;
+}
+
+.cadre-restaurant {
+  margin: 0 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resto-photo {
+  display: flex;
+}
+.resto-photo > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.resto-photo__nouveau {
+  position: relative;
+  top: 10px;
+  left: -100px;
+  height: 50%;
+  margin: 0;
+  padding: 10px;
+  background-color: #99E2D0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #1b6150;
+}
+.resto-photo__nouveau--hidden {
+  display: none;
+}
+
+.resto-lib {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 0 0 15px 15px;
+  background-color: white;
+  padding: 15px;
+}
+.resto-lib__titre {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+}
+.resto-lib__lieu {
+  font-size: 15px;
+  margin: 0;
+}
+.resto-lib > a {
+  padding: 5px 10px;
+  font-size: 25px;
+}
+.resto-lib > a .fa-solid {
+  display: none;
+}
+.resto-lib > a:hover .fa-solid {
+  display: block;
+}
+.resto-lib > a:hover .fa-regular {
+  display: none;
+}
+
+/* ************************************ pieds (toutes les pages) ************************************* */
+.pied {
+  background-color: black;
+}
+.pied__titre {
+  color: white;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 15px;
+  margin: 0 0 0 15px;
+  padding: 15px 0;
+}
+
+.rubriques {
+  margin-left: 15px;
+  padding: 10px 0;
+}
+.rubriques__propo {
+  display: flex;
+  flex-direction: column;
+}
+.rubriques__propo > a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.rubriques__propo > a > i {
+  margin-right: 10px;
+  width: 20px;
+}
+.rubriques__mentions {
+  display: flex;
+}
+.rubriques__mentions > a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.rubriques__contact {
+  display: flex;
+}
+.rubriques__contact > a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=styleohmyfood.css.map */

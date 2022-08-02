@@ -4,7 +4,7 @@
         <meta charset="utf-8" />                                                    <!-- encodage -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- largeur viewport navigateur mobile -->
         <link rel="stylesheet" href="css/normalize.css" />                          <!-- cohérence entre les navigateurs -->
-        <link rel="stylesheet" href="css/styleohmyfood.css" />                      <!-- feuille de style -->
+        <link rel="stylesheet" href="sass/styleohmyfood.css" />                      <!-- feuille de style -->
         <title>Ohmyfood/Accueil</title>
         <!-- Chargement police 'shrikhand'-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,76 +24,127 @@
     <body>
         <div id="bloc_page">
             <!-- ****************************************************************** En-tête *************************************************************************** -->
-            <header>
-                <!-- logo -->    
-                <div class="logo_ohmyfood">                    
-                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood"> 
-                </div>
+            <header class="entete">
+                <!-- logo --> 
+                                 
+                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" > 
+            </header>
+             <!-- ************************************************************** Corps ********************************************************************************** -->
+            <!-- ::::::::::::::::::::::::::::::::::::::::::::::::: Formulaire de recherche ::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+            <section class="form-rech">    
                 <!-- Zone de recherche -->
-                <div class="zone-recherche">
+                <div class="input">
                     <!-- Icone recherche -->
-                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="input__ico">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
                     <!-- Formulaire de recherche -->
-                    <form method="post" action="traitement.php">                        
+                    <form method="post" action="traitement.php" class="input__rech">                        
                         <!-- Zone de saisie -->                        
-                        <input type="search" name="localisation" id="localisation" placeholder="Paris, Belleville" size="20" autofocus autocomplete="off" />                 
+                        <input type="search" name="localisation" id="localisation" placeholder="Paris, Belleville" size="20" autofocus autocomplete="off" class="input__rech--style" />                 
                     </form>
                 </div>
-                <div>
+                <!-- Libellés -->
+                <div class="lib">
                     <h1>Réservez le menu qui vous convient</h1>
-                    <p>Découvrez des restaurants d'exception sélectionnés pas nos soins</p>
-                    <!-- bouton de recherche -->
-                    <input type="submit" value="Explorer nos restaurants" class="bouton-rech" />
+                    <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                </div>    
+                <!-- bouton de recherche -->
+                <div class="bouton">
+                    <input type="submit" value="Explorer nos restaurants" />
                 </div>
-            </header>
-            <!-- ************************************************************** Corps ********************************************************************************** -->
+            </section>
+           
             <!-- :::::::::::::::::::::::::::::::::: Fonctionnement ::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->     
             <section class="fonction"> 
-                 <h2>Fonctionnement</h2>               
-                 <ol>                                                
-                    <li class="ligne_fonct"><i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</li>
-                    <li class="ligne_fonct"><i class="fa-solid fa-list-ul"></i>Composez votre menu</li>
-                    <li class="ligne_fonct"><i class="fa-solid fa-store"></i>Dégustez au restaurant</li>
-                </ol>
+                 <h2 class="titre-section">Fonctionnement</h2>                                                                           
+                <div class="ligne">
+                    <p class="ligne__num">1</p>
+                    <span class="ligne__ico"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                    <p class="ligne__lib">Choisissez un restaurant</p>
+                </div>
+                <div class="ligne">
+                    <p class="ligne__num">2</p>
+                    <span class="ligne__ico"><i class="fa-solid fa-list-ul"></i></span>
+                    <p class="ligne__lib">Composez votre menu</p>
+                </div>
+                <div class="ligne">
+                    <p class="ligne__num">3</p>
+                    <span class="ligne__ico"><i class="fa-solid fa-store"></i></span>
+                    <p class="ligne__lib">Dégustez au restaurant</p>
+                </div>        
             </section>                
-            
-            <section id="restaurants">
-                <!-- ::::::::::::::::::::::::::::::::::: Restaurants :::::::::::::::::::::::::::::::::::::::::::: -->             
-                <h2>Restaurants</h2>
-                    <div class="cadre_restaurant">                                                                              
+            <!-- ::::::::::::::::::::::::::::::::::: Restaurants :::::::::::::::::::::::::::::::::::::::::::: -->
+            <section class="restaurants">                             
+                <h2 class="titre-section">Restaurants</h2>
+                <div class="cadre-restaurant"> 
+                    <div class="resto-photo">                                                                
                         <img src="images/restaurants/palette_gout.jpg" alt="La palette du goût" >
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
-                        <a href="pagepalette.html"><i class="fa-solid fa-heart"></i></a>
+                        <p class="resto-photo__nouveau">Nouveau</p>
+                    </div> 
+                    <div class="resto-lib">
+                        <div class="resto-titre">
+                            <h3 class="resto-lib__titre">La palette du goût</h3>
+                            <p class="resto-lib__lieu">Ménilmontant</p>
+                        </div>
+                        <a href="pagepalette.html"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i></a>
                     </div>
-                    <div class="cadre_restaurant">                                                                              
+                </div>
+                <div class="cadre-restaurant">   
+                    <div class="resto-photo">                                                                           
                         <img src="images/restaurants/note_enchantee.jpg" alt="La note enchantée" >
-                        <h3>La note enchantée</h3>
-                        <p>Charonne</p>
-                        <a href="pagenote.html"><i class="fa-solid fa-heart"></i></a>
-                    </div>  
-                    <div class="cadre_restaurant">                                                                              
+                        <p class="resto-photo__nouveau">Nouveau</p>
+                    </div> 
+                    <div class="resto-lib">
+                        <div class="resto-titre">   
+                            <h3 class="resto-lib__titre">La note enchantée</h3>
+                            <p class="resto-lib__lieu">Charonne</p>
+                        </div>
+                        <a href="pagenote.html"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                </div>  
+                <div class="cadre-restaurant">   
+                    <div class="resto-photo">                                                                           
                         <img src="images/restaurants/a_la_francaise.jpg" alt="A la française" >
-                        <h3>À la française</h3>
-                        <p>Cité Rouge</p>
-                        <a href="pagefrancaise.html"><i class="fa-solid fa-heart"></i></a>
+                        <p class="resto-photo__nouveau  resto-photo__nouveau--hidden">Nouveau</p>
                     </div>
-                    <div class="cadre_restaurant">                                                                              
+                    <div class="resto-lib">
+                        <div class="resto-titre">
+                            <h3 class="resto-lib__titre">À la française</h3>
+                            <p class="resto-lib__lieu">Cité Rouge</p>
+                        </div>
+                        <a href="pagefrancaise.html"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i></a>
+                        <p class="resto-photo__nouveau resto-photo__nouveau--hidden">Nouveau</p>
+                    </div>
+                </div>
+                <div class="cadre-restaurant"> 
+                    <div class="resto-photo">                                                                             
                         <img src="images/restaurants/delice_sens.jpg" alt="Le délice des sens" >
-                        <h3>Le délice des sens</h3>
-                        <p>Folie-Méricourt</p>
-                        <a href="pagedelice.html"><i class="fa-solid fa-heart"></i></a>
                     </div>
-                </section>                       
+                    <div class="resto-lib">
+                        <div class="resto-titre">
+                            <h3 class="resto-lib__titre">Le délice des sens</h3>
+                            <p class="resto-lib__lieu">Folie-Méricourt</p>
+                        </div>
+                        <a href="pagedelice.html"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                </div>
+            </section>                       
             <!-- ************************************************************** Pied de page *************************************************************************** -->
-            <footer id="pied">
-                    <h3>ohmyfood</h3>
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
-                        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+            <footer class="pied">
+                    <h3 class="pied__titre">ohmyfood</h3>
+                    <div class="rubriques">
+                        <div class ="rubriques__propo">
+                            <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
+                            <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+                        </div>
+                        <div class="rubriques__mentions">
+                            <a href="#">Mentions légales</a>
+                        </div> 
+                        <div class="rubriques__contact">   
+                            <a href="#">Contact</a>
+                        </div>   
+                    </div> 
             </footer>
         </div>
     </body>

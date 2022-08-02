@@ -4,7 +4,7 @@
         <meta charset="utf-8" />                                                    <!-- encodage -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- largeur viewport navigateur mobile -->
         <link rel="stylesheet" href="css/normalize.css" />                          <!-- cohérence entre les navigateurs -->
-        <link rel="stylesheet" href="css/styleohmyfood.css" />                      <!-- feuille de style -->
+        <link rel="stylesheet" href="sass/styleohmyfood.css" />                      <!-- feuille de style -->
         <title>Ohmyfood/Palette du gout</title>
         <!-- Chargement police 'shrikhand'-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,24 +24,20 @@
     <body>
         <div id="bloc_page">
             <!-- ****************************************************************** En-tête *************************************************************************** -->
-            <header>                
+            <header class="entete">              
                 <!-- Retour accueil -->
-                <div class="retour_acc">
+                <div class="entete__retour-acc">
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
-                <!-- logo -->    
-                <div class="logo_ohmyfood">                    
-                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood"> 
-                </div>                
+                <!-- logo -->          
+                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" > 
             </header>
             <!-- ************************************************************** Corps ********************************************************************************** -->
-            <section> 
-                <div class="photo_resto">                    
-                    <img src="images/restaurants/palette_gout.jpg" alt="La palette du goût" >
-                </div>                 
-            </section>                
             <!-- ::::::::::::::::::::::::::::::::::: Menus :::::::::::::::::::::::::::::::::::::::::::: -->
             <section class="carte">
+                <div class="carte__photo">                    
+                    <img src="images/restaurants/palette_gout.jpg" alt="La palette du goût" >
+                </div>
                 <div class="carte__nom_resto">
                     <h1>La palette du goût</h1>
                     <i class="fa-solid fa-heart"></i>
@@ -133,14 +129,20 @@
                 </div>    
             </section>                       
             <!-- ************************************************************** Pied de page *************************************************************************** -->
-            <footer id="pied">
-                    <h3>ohmyfood</h3>
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
-                        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-            </footer>
+            <footer class="pied">
+                <h3 class="pied__titre">ohmyfood</h3>
+                <div class="rubriques">
+                    <div class ="rubriques__propo">
+                        <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
+                        <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+                    </div>
+                    <div class="rubriques__mentions">
+                        <a href="#">Mentions légales</a>
+                    </div> 
+                    <div class="rubriques__contact">   
+                        <a href="#">Contact</a>
+                    </div>   
+                </div> 
+        </footer>
         </div>
     </body>

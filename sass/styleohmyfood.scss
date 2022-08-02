@@ -1,0 +1,229 @@
+// variables
+$first-color:#9356DC;
+$second-color:#FF79DA;
+$third-color:#99E2D0;
+$bg1-color: #e3e3e3;
+$bg2-color: #f2f0f0;
+$pied-color: white;
+$font-titre:'Shrikhand', sans-serif;
+$font-texte:'Roboto', sans-serif;
+$font-size: (titre-page: 24px, titre-section: 20px, titre: 16px, sstitre: 15px, lib: 13px);
+$margin-haut: (15px 0 0 0);
+@mixin pied-style{
+    color: $pied-color;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+/* --------------------- Paramètres généraux de la page ------------------------- */
+body
+{
+    font-family: $font-texte; 
+}	
+#bloc_page
+{    
+    width: 100%;					/* largeur de la page */
+    margin: auto;
+}
+.titre-section {
+    font-size: map-get($font-size, titre-section);
+    margin-left: 15px;
+}
+/* ****************************************** Page accueil *********************************************** */
+/* -------------------------- en-tête ------------------------------------------ */
+.entete {
+    display: flex;
+    justify-content: center;
+    >img {
+        margin: 10px 0 10px 0;
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+    }
+}
+/* ------------------------- formulaire de recherche --------------------------- */
+.form-rech {
+    background-color: $bg2-color;
+    padding-bottom: 40px;
+}
+.input {
+    display: flex;
+    justify-content: center;
+    background-color: $bg1-color;
+    padding: 10px 0 10px 0;
+    &__ico {
+        align-items: center;
+        padding-top: 4px;
+    }
+    &__rech {
+        margin-left: 10px;
+        &--style {
+            background-color: $bg1-color;
+            border: none;
+            font-weight: bold;
+        }
+    }
+}
+.lib {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: $margin-haut;
+    >h1 {
+        font-size: map-get($font-size, titre-page);
+        font-weight: bold;
+        padding: 0 60px 0 60px;
+        margin: $margin-haut;
+    }
+    >p {
+        font-size: map-get($font-size, titre);
+        padding: 0 30px 0 30px;
+        margin: $margin-haut;
+    }
+}
+.bouton {
+    display: flex;
+    justify-content: center;
+    margin: $margin-haut;
+    >input {
+        background: linear-gradient($second-color, $first-color);
+        color: white;
+        border: none;        
+        border-radius: 25px;
+        padding: 10px 15px 10px 15px;
+        box-shadow: 5px 5px 5px $first-color;
+        
+    }
+}
+/* ------------------------- fonctionnement --------------------------- */
+.ligne {
+    display: flex;
+    align-items: baseline;
+    font-size: map-get($font-size, sstitre);
+    margin: 0 15px 15px 20px;
+    padding: 5px 0 5px 0;
+    background-color: $bg2-color;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px $bg1-color;
+    &__num {
+        position: relative;
+        left: -10px;
+        padding: 5px 8px 3px 8px;
+        background-color: $first-color;
+        color: white;
+        border: none;        
+        border-radius: 25px;
+    }
+    &__ico {
+        margin-left: 20px;
+    }
+    &__lib {
+        margin-left: 20px;
+        font-weight: bold;
+    }
+}
+/* ------------------------- restaurants --------------------------- */
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg2-color;
+    padding-bottom: 20px;
+}
+.cadre-restaurant {
+    margin: 0 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+}    
+.resto-photo {
+    display: flex;
+    >img {  
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    } 
+    &__nouveau {
+        position: relative;
+        top: 10px;
+        left: -100px;
+        height: 50%;
+        margin: 0;
+        padding: 10px;
+        background-color: $third-color;
+        font-size: map-get($font-size, lib);
+        font-weight: bold;
+        color: darken($color: $third-color, $amount: 50%);
+        &--hidden {
+            display: none;
+        }
+    }  
+}   
+.resto-lib {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 0 0 15px 15px;
+    background-color: white;
+    padding: 15px;
+    &__titre {
+        font-size: map-get($font-size, titre);
+        margin: 0 0 5px 0;
+    }
+    &__lieu {
+        font-size: map-get($font-size, sstitre);
+        margin: 0;
+    }
+    >a {
+        padding: 5px 10px;
+        font-size: 25px;
+        .fa-solid {
+            display: none;
+        }
+    }
+    >a:hover {
+        .fa-solid {
+            display: block;
+        }
+        .fa-regular {
+            display: none;
+        }
+    }  
+}  
+/* ************************************ pieds (toutes les pages) ************************************* */
+.pied {
+    background-color: black;
+    &__titre {
+        color: $pied-color;
+        font-family: $font-titre;
+        font-size: map-get($font-size, sstitre);
+        margin: 0 0 0 15px;
+        padding: 15px 0;
+    }
+}
+.rubriques {
+    margin-left: 15px;
+    padding: 10px 0;
+    &__propo {
+        display: flex;
+        flex-direction: column;
+        >a {
+            @include pied-style;
+            >i {
+             margin-right: 10px;
+             width: 20px;
+            }
+        } 
+    }
+    &__mentions {
+        display: flex;
+        >a {
+            @include pied-style;
+        }
+    }
+    &__contact {
+        display: flex;
+        >a {
+            @include pied-style;
+        }
+    }
+}
