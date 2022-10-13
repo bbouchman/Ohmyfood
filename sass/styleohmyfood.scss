@@ -7,43 +7,151 @@ $bg2-color: #f2f0f0;
 $pied-color: white;
 $font-titre:'Shrikhand', sans-serif;
 $font-texte:'Roboto', sans-serif;
-$font-size: (titre-page: 24px, titre-section: 20px, titre: 16px, sstitre: 15px, lib: 13px);
 $margin-haut: (15px 0 0 0);
+$gradient: (linear-gradient($second-color, $first-color));
+$font-size: (gros-coeur: 35px, coeur: 25px, titre-page: 24px, titre-section: 20px, titre: 16px, sstitre: 15px, lib: 13px);
+$breakpoints: (max-mobile: 767px, min-tablette: 768px, max-tablette: 1023px, min-desktop: 1024px);
+// Mixins
+@mixin tablette {
+    @media screen and (min-width: map-get($breakpoints, min-tablette)) and (max-width: map-get($breakpoints, max-tablette)) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, min-desktop)) {
+        @content;
+    }
+}
+@mixin bouton-style {
+    background: $gradient;
+    color: white;
+    border: none;        
+    border-radius: 25px;
+    padding: 10px 15px 10px 15px;
+    box-shadow: 5px 5px 5px $first-color;
+}
+@mixin bouton-hover {
+    background: color-light();
+    box-shadow: 5px 5px 5px darken($color: $first-color, $amount: 20%);
+}
+@mixin anim-plat($delay) {
+    animation-name: apparition-plat;
+    animation-duration: 2000ms;               
+    animation-delay: $delay;
+    animation-fill-mode: backwards;
+    opacity: 1;
+}
 @mixin pied-style{
     color: $pied-color;
     text-decoration: none;
     margin-bottom: 10px;
 }
+// Fonctions
+/* éclairssissement couleur fond bouton */
+@function color-light () {
+    $second-color: lighten($color: $second-color, $amount: 10%);
+    $first-color: lighten($color: $first-color, $amount: 10%);
+    $gradient-light: (linear-gradient($second-color, $first-color));
+    @return $gradient-light;
+}
+// keyframes
+/* style spinner */
+@keyframes apparition-spinner {
+    from {
+        opacity: 1;
+        height: 100vh;
+        width: 100%;
+    }
+    98% {
+        opacity: 1;
+        height: 100vh;
+        width: 100%;
+    }
+    99% {
+        opacity: 0;
+        height: 100vh;
+        width: 100%;
+    }
+    to {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+/* rotation spinner */
+@keyframes loader-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+/* animation apparition  plats */
+@keyframes apparition-plat {
+    0% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    20% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* --------------------- Paramètres généraux de la page ------------------------- */
 body
 {
+    display: flex;
     font-family: $font-texte; 
 }	
 #bloc_page
-{    
+{ 
     width: 100%;					/* largeur de la page */
+    max-width: 1500px;
     margin: auto;
 }
 .titre-section {
     font-size: map-get($font-size, titre-section);
     margin-left: 15px;
 }
-/* ****************************************** Page accueil *********************************************** */
-/* -------------------------- en-tête ------------------------------------------ */
+
+/* *************************** en-tête *********************************** */
 .entete {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+    position: relative;
+    >a {
+        position: absolute;
+        left: 15px;
+        font-size: 25px;
+        text-decoration: none;
+    }
     >img {
-        margin: 10px 0 10px 0;
         width: 50%;
         height: 50%;
         object-fit: cover;
     }
 }
+/* ****************************************** Page accueil *********************************************** */
 /* ------------------------- formulaire de recherche --------------------------- */
 .form-rech {
     background-color: $bg2-color;
     padding-bottom: 40px;
+    @include tablette {
+        margin-bottom: 10px;
+    }
 }
 .input {
     display: flex;
@@ -55,11 +163,11 @@ body
         padding-top: 4px;
     }
     &__rech {
-        margin-left: 10px;
         &--style {
             background-color: $bg1-color;
             border: none;
             font-weight: bold;
+            padding-left: 10px;
         }
     }
 }
@@ -85,17 +193,32 @@ body
     display: flex;
     justify-content: center;
     margin: $margin-haut;
-    >input {
-        background: linear-gradient($second-color, $first-color);
-        color: white;
-        border: none;        
-        border-radius: 25px;
-        padding: 10px 15px 10px 15px;
-        box-shadow: 5px 5px 5px $first-color;
-        
+    &__explor {
+        @include bouton-style; 
+        &:hover {
+            @include bouton-hover;      
+        }
+    }
+    &__cde {
+        @include bouton-style;
+        &:hover {
+            @include bouton-hover;    
+        }
     }
 }
 /* ------------------------- fonctionnement --------------------------- */
+.rech-fonc {
+    @include tablette {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+.fonction__ligne {
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 .ligne {
     display: flex;
     align-items: baseline;
@@ -120,6 +243,9 @@ body
     &__lib {
         margin-left: 20px;
         font-weight: bold;
+        @include desktop {
+            margin-right: 20px;
+        }
     }
 }
 /* ------------------------- restaurants --------------------------- */
@@ -128,12 +254,43 @@ body
     flex-direction: column;
     background-color: $bg2-color;
     padding-bottom: 20px;
-}
-.cadre-restaurant {
+    &__ligne {
+        @include tablette {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+    }
+    &__cadre {
     margin: 0 15px 0 15px;
     display: flex;
     flex-direction: column;
-}    
+        >a {
+        padding: 5px 10px;
+        font-size: map-get($font-size, coeur);
+        text-decoration: none;
+        .fa-solid {
+            display: none;
+        }
+        }
+        &__coeur:hover {
+            .fa-solid {
+                display: block;
+                color: lighten($color: $first-color, $amount: 20%);
+            }
+            .fa-regular {
+                display: none;
+            }
+        }  
+    }  
+}  
 .resto-photo {
     display: flex;
     >img {  
@@ -173,22 +330,152 @@ body
         font-size: map-get($font-size, sstitre);
         margin: 0;
     }
-    >a {
-        padding: 5px 10px;
-        font-size: 25px;
-        .fa-solid {
+} 
+/* ****************************************** Pages resto *********************************************** */ 
+.menu__photo {
+    >img {  
+        width: 100%;
+        object-fit: cover;
+    } 
+}
+.carte {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg2-color;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    position: relative;
+    margin-top: -40px;
+    &__nom-resto {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 30px 0 15px;
+        >h1 {
+            margin: 0;
+            font-family: $font-titre;
+            font-size: map-get($font-size, titre-page);
+        }
+        &__coeur {
+            font-size: map-get($font-size, gros-coeur);
+            .fa-solid {
             display: none;
+        }
+        } 
+        &__coeur:hover {
+            .fa-solid {
+                display: block;
+                color: lighten($color: $first-color, $amount: 20%);
+            }
+            .fa-regular {
+                display: none;
+            }
+        }  
+    }
+    &__cadre {
+        @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        }
+        &__menu {
+            @include desktop {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
         }
     }
-    >a:hover {
-        .fa-solid {
-            display: block;
+    }
+    &__titre {
+        margin: 15px 0 0 10px;
+        >h2 {
+            font-size: map-get($font-size, titre);
+            font-weight: lighter;
+            margin: 0;
         }
-        .fa-regular {
-            display: none;
+        >p {
+            color: $third-color;
+            font-weight: bold;
+            margin: 0;
         }
-    }  
-}  
+    }
+    &__plat {
+        display: flex;
+        background-color: white;
+        border-radius: 15px;
+        margin: 10px;
+        padding-left: 10px;
+        >.anim-checked {
+            padding: 20px 0px 20px 0px;
+            min-width: 0px;
+            background-color: $third-color;
+            color: white;
+            border-radius: 0 15px 15px 0;
+            transform: scaleX(0);
+            transform-origin: right 50%;
+            >i {
+                display: flex;
+                font-size: 25px;
+                justify-content: center;
+            }
+        }
+        &:nth-child(1) {
+            @include anim-plat(200ms);
+        }
+        &:nth-child(2) {
+            @include anim-plat(800ms);
+        }
+        &:nth-child(3) {
+            @include anim-plat(1300ms);
+        }
+        &:last-child {
+            @include anim-plat(1800ms);
+        }
+        &:hover {
+            .anim-checked {
+                width: 70px;
+                transform: scaleX(1);
+                transition: transform 500ms linear;
+                >i {
+                    transform: rotate(720deg);
+                    transition: transform 500ms;
+                }
+            }
+        }
+    }
+}
+.plat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__titre {  
+        font-size: map-get($font-size, titre);
+        margin: $margin-haut;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &__lib {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: map-get($font-size, lib);
+        margin: 10px 0px 10px 0;
+        min-width: 0px;
+        justify-content: space-between;
+        &__sstitre {
+            margin: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        &__prix {
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+}
 /* ************************************ pieds (toutes les pages) ************************************* */
 .pied {
     background-color: black;
@@ -203,6 +490,18 @@ body
 .rubriques {
     margin-left: 15px;
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    @include tablette {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 15px;
+    }
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 15px;
+    }
     &__propo {
         display: flex;
         flex-direction: column;
@@ -214,16 +513,78 @@ body
             }
         } 
     }
-    &__mentions {
+    &__autres {
         display: flex;
-        >a {
-            @include pied-style;
+        flex-direction: column;
+        width: 50%;
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
         }
-    }
-    &__contact {
-        display: flex;
         >a {
             @include pied-style;
         }
     }
 }
+/* ************************************ loading spinner ************************************* */
+.load-spin { 
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: auto;
+    background: white;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    animation: apparition-spinner 3s 1;
+}
+.loader {
+    position: relative;
+    margin-top: 100px;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background: linear-gradient(#9356DC, #FF79DA, #99E2D0);
+    animation: loader-spinner 3s linear infinite;
+    >p {
+        position: absolute;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        z-index: 2;
+    }
+    >span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(#9356DC, #FF79DA, #99E2D0);
+        &:nth-child(1) {
+            filter: blur(15px);
+        }
+        &:nth-child(2) {
+            filter: blur(20px);
+        }
+        &:nth-child(3) {
+            filter: blur(35px);
+        }
+        &:nth-child(4) {
+            filter: blur(60px);
+        }
+    }
+    &:after {
+        content: "Ohmyfood";
+        font-family: "Shrikhand", sans-serif;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        right: 10px;
+        background: white;
+        border-radius: 50%;
+        border: solid #f1f1f1 10px;
+    }
+} 

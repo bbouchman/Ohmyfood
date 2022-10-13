@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8" />                                                    <!-- encodage -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- largeur viewport navigateur mobile -->
-        <link rel="stylesheet" href="css/normalize.css" />                          <!-- cohérence entre les navigateurs -->
-        <link rel="stylesheet" href="sass/styleohmyfood.css" />                      <!-- feuille de style -->
+        <meta charset="utf-8">                                                    <!-- encodage -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- largeur viewport navigateur mobile -->
+        <link rel="stylesheet" href="css/normalize.css">                          <!-- cohérence entre les navigateurs -->
+        <link rel="stylesheet" href="sass/styleohmyfood.css">                      <!-- feuille de style -->
         <title>Ohmyfood/A la française</title>
         <!-- Chargement police 'shrikhand'-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <!-- Librairie Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Media query pour tablettes et desktop -->
-        <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="css/tablette.css" />
-        <link rel="stylesheet" media="screen and (min-width:1024px)" href="css/desktop.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     </head>
 
     <body>
@@ -26,109 +23,163 @@
             <!-- ****************************************************************** En-tête *************************************************************************** -->
             <header class="entete">                
                 <!-- Retour accueil -->
-                <div class="entete__retour-acc">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-                <!-- logo -->    
-                <div>                    
-                    <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" class="entete__logo entete__logo--page"> 
-                </div>                
+                <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                <!-- logo -->           
+                <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" class="entete__logo entete__logo--page"> 
             </header>
             <!-- ************************************************************** Corps ********************************************************************************** -->             
             <!-- ::::::::::::::::::::::::::::::::::: Menus :::::::::::::::::::::::::::::::::::::::::::: -->
-            <section class="carte">
-                <div class="carte__photo">                    
-                    <img src="images/restaurants/a_la_francaise.jpg" alt="A la française" >
-                </div>  
-                <div class="carte__nom_resto">
+            <div class="menu__photo">                    
+                <img src="images/restaurants/a_la_francaise.jpg" alt="A la française" >
+            </div>
+            <section class="carte">      
+                <div class="carte__nom-resto">
                     <h1>À la française</h1>
-                    <i class="fa-solid fa-heart"></i>
+                    <div class="carte__nom-resto__coeur">
+                        <i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i>
+                    </div>
                 </div>
                 <!-- ::::::::::::::::::::::::::::::::::: Entrées :::::::::::::::::::::::::::::::::::::::::::: -->
-                <div class="carte__entrees">
+                <div class="carte__cadre">
+                    <div class="carte__cadre__menu">
                     <div class="carte__titre">                             
                         <h2>ENTRÉES</h2>
-                        <p>____</p>
+                        <p>‾‾‾‾‾‾‾</p>
                     </div>
-                    <div class="carte__entree">
-                        <div class="carte__ligne">
-                            <h3>Tartare de poulpe acidulé</h3>
-                            <p>Aux zestes d'orange</p>
-                            <p>25€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                    <div class="carte__groupe">
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Tartare de poulpe acidulé</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Aux zestes d'orange</p>
+                                    <p class="plat__lib__prix">25€</p>
+                                </div> 
+                            </div>
+                            <div class="anim-checked">   
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
-                        <div class="carte__ligne">
-                            <h3>Velouté de légumes d'antan</h3>
-                            <p>Carotte, panais, topinambour</p>
-                            <p>35€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Velouté de légumes d'antan</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Carotte, panais, topinambour</p>
+                                    <p class="plat__lib__prix">35€</p>
+                                </div> 
+                            </div>
+                            <div class="anim-checked">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
-                        <div class="carte__ligne">
-                            <h3>Soupe à l'oignon</h3>
-                            <p>Revisitée</p>
-                            <p>20€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Soupe à l'oignon</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Revisitée</p>
+                                    <p class="plat__lib__prix">20€</p>
+                                </div>
+                            </div>
+                            <div class="anim-checked">            
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
                     </div>
-               </div> 
+                    </div>
                <!-- ::::::::::::::::::::::::::::::::::: Plats :::::::::::::::::::::::::::::::::::::::::::: -->
-               <div class="carte__plats">
+                    <div class="carte__cadre__menu">
                     <div class="carte__titre">                             
                         <h2>PLATS</h2>
-                        <p>____</p>
+                        <p>‾‾‾‾‾‾‾</p>
                     </div>
-                    <div class="carte__plat">
-                        <div class="carte__ligne">
-                            <h3>Coquilles Saint-Jacques</h3>
-                            <p>Accompagnées d'une purée de panais</p>
-                            <p>40€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                    <div class="carte__groupe">
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Coquilles Saint-Jacques</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Accompagnées d'une purée de panais</p>
+                                    <p class="plat__lib__prix">40€</p>
+                                </div>    
+                            </div>
+                            <div class="anim-checked">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
-                        <div class="carte__ligne">
-                            <h3>Magret de canard</h3>
-                            <p>Et parmentier de pommes de terre</p>
-                            <p>35€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Magret de canard</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Et parmentier de pommes de terre</p>
+                                    <p class="plat__lib__prix">35€</p>
+                                </div>
+                            </div>
+                            <div class="anim-checked">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
-                        <div class="carte__ligne">
-                            <h3>Pigeonneau d'Ille-et-Vilaine</h3>
-                            <p>Sur son lit de gnocchis aux légumes</p>
-                            <p>44€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Pigeonneau d'Ille-et-Vilaine</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Sur son lit de gnocchis aux légumes</p>
+                                    <p class="plat__lib__prix">44€</p>
+                                </div>
+                            </div>
+                            <div class="anim-checked">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </div>
                 <!-- ::::::::::::::::::::::::::::::::::: Desserts :::::::::::::::::::::::::::::::::::::::::::: -->
-               <div class="carte__desserts">
+                    <div class="carte__cadre__menu">
                     <div class="carte__titre">                             
                         <h2>DESSERTS</h2>
-                        <p>____</p>
+                        <p>‾‾‾‾‾‾‾</p>
                     </div>
-                    <div class="carte__dessert">
-                        <div class="carte__ligne">
-                            <h3>Pétales de violettes glacés</h3>
-                            <p>Et purée de noisettes</p>
-                            <p>18€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                    <div class="carte__groupe">
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Pétales de violettes glacés</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Et purée de noisettes</p>
+                                    <p class="plat__lib__prix">18€</p>
+                                </div> 
+                            </div>
+                            <div class="anim-checked">        
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
-                        <div class="carte__ligne">
-                            <h3>Fondant au chocolat</h3>
-                            <p>Revisité</p>
-                            <p>22€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Fondant au chocolat</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Revisité</p>
+                                    <p class="plat__lib__prix">22€</p>
+                                </div>
+                            </div>
+                            <div class="anim-checked">        
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
                         </div>
-                        <div class="carte__ligne">
-                            <h3>Millefeuille croustillant</h3>
-                            <p>Myrtilles et pâte d'amande</p>
-                            <p>23€</p>
-                            <a href="#"><i class="fa-solid fa-circle-check"></i></a>
-                        </div>
+                        <div class="carte__plat">
+                            <div class="plat">
+                                <h3 class="plat__titre">Millefeuille croustillant</h3>
+                                <div class="plat__lib">
+                                    <p class="plat__lib__sstitre">Myrtilles et pâte d'amande</p>
+                                    <p class="plat__lib__prix">23€</p>
+                                </div>
+                            </div>
+                            <div class="anim-checked">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
+                        </div>  
                     </div>
-                </div>                
+                    </div> 
+                </div>        
                 <!-- bouton de commande -->    
-                 <div>    
-                    <input type="submit" value="Commander" class="bouton_cde" />
-                </div>    
+                 <form method="post" action="traitement.php" class="bouton">    
+                    <input type="submit" value="Commander" class="bouton__cde">
+                 </form>    
             </section>                       
             <!-- ************************************************************** Pied de page *************************************************************************** -->
             <footer class="pied">
@@ -138,13 +189,12 @@
                         <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
                         <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
                     </div>
-                    <div class="rubriques__mentions">
+                    <div class="rubriques__autres">
                         <a href="#">Mentions légales</a>
-                    </div> 
-                    <div class="rubriques__contact">   
-                        <a href="#">Contact</a>
+                        <a href="mailto:bouchierebertrand@gmail.com?subject=Votre%20demande&body=Votre%20message">Contact</a>
                     </div>   
                 </div> 
-        </footer>
+            </footer>
         </div>
     </body>
+</html>
