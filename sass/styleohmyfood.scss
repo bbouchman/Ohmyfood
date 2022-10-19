@@ -288,7 +288,7 @@ body
             .fa-regular {
                 display: none;
             }
-        }  
+        }
     }  
 }  
 .resto-photo {
@@ -432,7 +432,7 @@ body
         &:last-child {
             @include anim-plat(1800ms);
         }
-        &:hover {
+        &:active {
             .anim-checked {
                 width: 70px;
                 transform: scaleX(1);
@@ -440,6 +440,19 @@ body
                 >i {
                     transform: rotate(720deg);
                     transition: transform 500ms;
+                }
+            }
+        }
+        @include desktop {
+            &:hover {
+                .anim-checked {
+                    width: 70px;
+                    transform: scaleX(1);
+                    transition: transform 500ms linear;
+                    >i {
+                        transform: rotate(720deg);
+                        transition: transform 500ms;
+                    }
                 }
             }
         }

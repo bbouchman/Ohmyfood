@@ -486,14 +486,25 @@ body {
           animation-fill-mode: backwards;
   opacity: 1;
 }
-.carte__plat:hover .anim-checked {
+.carte__plat:active .anim-checked {
   width: 70px;
   transform: scaleX(1);
   transition: transform 500ms linear;
 }
-.carte__plat:hover .anim-checked > i {
+.carte__plat:active .anim-checked > i {
   transform: rotate(720deg);
   transition: transform 500ms;
+}
+@media screen and (min-width: 1024px) {
+  .carte__plat:hover .anim-checked {
+    width: 70px;
+    transform: scaleX(1);
+    transition: transform 500ms linear;
+  }
+  .carte__plat:hover .anim-checked > i {
+    transform: rotate(720deg);
+    transition: transform 500ms;
+  }
 }
 
 .plat {
