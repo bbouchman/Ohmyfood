@@ -133,6 +133,7 @@ body {
   left: 15px;
   font-size: 25px;
   text-decoration: none;
+  color: black;
 }
 .entete > img {
   width: 50%;
@@ -178,7 +179,7 @@ body {
   margin: 15px 0 0 0;
 }
 .lib > h1 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   padding: 0 60px 0 60px;
   margin: 15px 0 0 0;
@@ -265,6 +266,9 @@ body {
     margin-right: 20px;
   }
 }
+.ligne:hover .ligne__ico {
+  color: #9356DC;
+}
 
 /* ------------------------- restaurants --------------------------- */
 .restaurants {
@@ -298,6 +302,7 @@ body {
   padding: 5px 10px;
   font-size: 25px;
   text-decoration: none;
+  color: black;
 }
 .restaurants__cadre > a .fa-solid {
   display: none;
@@ -379,9 +384,9 @@ body {
 .carte__nom-resto > h1 {
   margin: 0;
   font-family: "Shrikhand", sans-serif;
-  font-size: 24px;
+  font-size: 30px;
 }
-.carte__nom-resto__coeur {
+.carte__nom-resto__coeur .fa-regular {
   font-size: 35px;
 }
 .carte__nom-resto__coeur .fa-solid {
@@ -390,6 +395,7 @@ body {
 .carte__nom-resto__coeur:hover .fa-solid {
   display: block;
   color: #c9abee;
+  font-size: 35px;
 }
 .carte__nom-resto__coeur:hover .fa-regular {
   display: none;

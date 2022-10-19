@@ -9,7 +9,7 @@ $font-titre:'Shrikhand', sans-serif;
 $font-texte:'Roboto', sans-serif;
 $margin-haut: (15px 0 0 0);
 $gradient: (linear-gradient($second-color, $first-color));
-$font-size: (gros-coeur: 35px, coeur: 25px, titre-page: 24px, titre-section: 20px, titre: 16px, sstitre: 15px, lib: 13px);
+$font-size: (gros-coeur: 35px, coeur: 25px, titre-page: 30px, titre-section: 20px, titre: 16px, sstitre: 15px, lib: 13px);
 $breakpoints: (max-mobile: 767px, min-tablette: 768px, max-tablette: 1023px, min-desktop: 1024px);
 // Mixins
 @mixin tablette {
@@ -137,6 +137,7 @@ body
         left: 15px;
         font-size: 25px;
         text-decoration: none;
+        color: black;
     }
     >img {
         width: 50%;
@@ -247,6 +248,11 @@ body
             margin-right: 20px;
         }
     }
+    &:hover {
+        .ligne__ico {
+            color: $first-color;
+        }
+    }
 }
 /* ------------------------- restaurants --------------------------- */
 .restaurants {
@@ -276,6 +282,7 @@ body
         padding: 5px 10px;
         font-size: map-get($font-size, coeur);
         text-decoration: none;
+        color: black;
         .fa-solid {
             display: none;
         }
@@ -358,15 +365,18 @@ body
             font-size: map-get($font-size, titre-page);
         }
         &__coeur {
-            font-size: map-get($font-size, gros-coeur);
+            .fa-regular {
+                font-size: map-get($font-size, gros-coeur);
+            }
             .fa-solid {
-            display: none;
-        }
+                display: none;
+            }
         } 
         &__coeur:hover {
             .fa-solid {
                 display: block;
                 color: lighten($color: $first-color, $amount: 20%);
+                font-size: map-get($font-size, gros-coeur);
             }
             .fa-regular {
                 display: none;
