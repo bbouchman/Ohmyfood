@@ -84,7 +84,7 @@ $breakpoints: (max-mobile: 767px, min-tablette: 768px, max-tablette: 1023px, min
         transform: rotate(0deg);
     }
     50% {
-        opacity: 0.2;
+        opacity: 0.3;
     }
     100% {
         transform: rotate(360deg);
@@ -300,16 +300,17 @@ body
 }  
 .resto-photo {
     display: flex;
-    >img {  
+    position: relative;
+    >img {
         width: 100%;
         object-fit: cover;
         border-radius: 15px 15px 0 0;
     } 
     &__nouveau {
-        position: relative;
+        position: absolute;
         top: 10px;
-        left: -100px;
-        height: 50%;
+        right: 20px;
+        height: 5%;
         margin: 0;
         padding: 10px;
         background-color: $third-color;
@@ -555,22 +556,14 @@ body
     z-index: 2;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0;
-    margin: auto;
     background: white;
-    height: 0;
-    width: 0;
     opacity: 0;
     animation: apparition-spinner 3s 1;
 }
 .loader {
-    position: relative;
     margin-top: 100px;
     width: 175px;
     height: 175px;
-    border-radius: 50%;
-    background: linear-gradient(#9356DC, #FF79DA, #99E2D0);
     animation: loader-spinner 3s linear infinite;
     >p {
         position: absolute;
